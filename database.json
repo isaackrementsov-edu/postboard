@@ -1,1 +1,1 @@
-{}
+{"_default": {"1": {"id": "601fb73d-23b6-11ea-9c9a-34415def80cf", "title": "Cool Sushi Place", "content": "Hi everyone! I just want to recommend this cool sushi place just down Acme street.", "name": "Jeff Smith", "image_name": "food-3081324_1280.jpg", "likes": 2}, "2": {"id": "69d50831-23ba-11ea-b0e8-34415def80cf", "title": "Example Post", "content": "Example Post Example Post Example PostExample Post", "name": "Jeff Example", "image_name": "desmos-graph (7).png", "likes": 1}}}

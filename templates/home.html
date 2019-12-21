@@ -8,39 +8,69 @@
     </head>
     <body>
         <div class="container fill">
-            <h1>PostBoard</h1>
-            <hr>
-            <p>Share a quick thought and an image</p>
+            <div class="jumbotron">
+                <h1><img src="static/img/logo.svg"> PostBoard</h1>
+                <hr>
+                <p>Share a quick thought and an image</p>
+            </div>
         </div>
+        {% if error %}
+            <div class="container fill">
+                <div class="row error">
+                    <h3>{{error}}</h3>
+                </div>
+            </div>
+        {% endif %}
         <div class="container">
             <div class="row">
                 <div class="col-5">
-                    <form action="/" method="POST">
+                    <form action="/" method="POST" enctype="multipart/form-data" class="card">
                         <div class="form-group">
                             <label>Post Title</label>
-                            <input type="text" class="form-control" name="title">
+                            <input required type="text" class="form-control" name="title">
                         </div>
                         <div class="form-group">
                             <label>Body</label>
-                            <textarea class="form-control" name="content"></textarea>
+                            <textarea required class="form-control" name="content"></textarea>
                         </div>
                         <div class="form-group">
                             <label>Name</label>
-                            <input type="text" class="form-control" name="name">
+                            <input required type="text" class="form-control" name="name">
                         </div>
                         <div class="form-group">
                             <label>Upload an image</label>
-                            <input type="file" class="form-control" name="image">
+                            <input required type="file" class="form-control" name="image" accept=".png,.svg,.jpg,.jpeg,.bmp">
                         </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
                 </div>
-                <div class="col-7">
+                <div class="col-7 posts">
+                        <form action="/">
+                            <div class="row search">
+                                <div class="col">
+                                    <input class="form-control" type="text" name="filter" placeholder="Search posts..." {% if query %}value="{{query}}"{% endif %}>
+                                </div>
+                                <div class="col">
+                                    <input class="btn btn-primary" type="submit" value="Search">
+                                </div>
+                            </div>
+                        </form>
                     {% for post in posts %}
                         <div class="post row card">
                             <h3>{{post.title}}</h3>
-                            <p>{{post.author}}</p>
-                            <img src="static/uploads/{{post.image}}">
-                            <p>{{post.content}}</p>
+                            <div class="row">
+                                <img src="static/uploads/{{post.image_name}}">
+                            </div>
+                            <div class="row">
+                                <p><i>Posted by {{post.name}} </i></p><br>
+                                <p> {{post.content}}</p>
+                            </div>
+                            <div class="row">
+                                <form action="/like" method="POST">
+                                    <input type="hidden" name="post_id" value="{{post.id}}">
+                                    <p><button type="submit" class="btn btn-pink">Like</button><span class="likes">{{post.likes}}<span></p>
+                                </form>
+                            </div>
                         </div>
                     {% endfor %}
                 </div>

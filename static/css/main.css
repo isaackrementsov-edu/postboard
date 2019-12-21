@@ -1,0 +1,83 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(70,70,70);
+    color: whitesmoke;
+}
+.jumbotron h1 img {
+    height: 40px;
+    fill: red;
+}
+.posts {
+    height: 600px;
+    overflow-y: auto;
+}
+.error {
+    padding: 20px;
+    padding-top: 0;
+    width: 100%;
+}
+.error h3 {
+    font-size: 15px;
+    font-weight: 200;
+    color: #E57373;
+}
+.jumbotron {
+    background-color: rgb(90,90,90);
+}
+.jumbotron h1 {
+    color: #8C9EFF;
+}
+.jumbotron p {
+    color: #C5CAE9;
+}
+.form-control {
+    background-color: transparent;
+    color: #9FA8DA !important;
+    border-color: rgb(90,90,90);
+}
+.form-control:focus {
+    background-color: rgb(90,90,90);
+    color: whitesmoke;
+    outline-color: #9FA8DA !important;
+}
+.btn-primary, .btn-primary:hover {
+    background-color: #536DFE;
+    border-color: #536DFE;
+}
+.post {
+    padding: 20px;
+    margin: 20px;
+    background-color: rgb(90,90,90);
+    box-shadow: 0 0px 8px 0 rgba(0,0,0,0.2);
+}
+.post .row {
+    padding: 10px 20px;
+}
+.post img {
+    width: 400px;
+}
+.search input {
+    margin: 10px 2px;
+}
+.col-5 form {
+    box-shadow: 0 0px 8px 0 rgba(0,0,0,0.2);
+    background-color: rgb(90,90,90);
+    padding: 20px;
+}
+.col-5 form .form-control {
+    border-color: rgb(70,70,70);
+    background-color: rgb(80,80,80);
+}
+.btn-pink {
+    background-color: #FF4081;
+    color: whitesmoke;
+}
+.likes {
+    padding: 8px;
+    vertical-align: middle;
+    margin: 10px;
+    border-radius: 5px;
+    color: white;
+    background-color: #FF4081;
+}
